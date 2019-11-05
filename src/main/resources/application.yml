@@ -1,0 +1,29 @@
+spring:
+  #配置数据源
+  datasource:
+    type: org.apache.commons.dbcp.BasicDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmfz
+    username: root
+    password: root
+    #访问jsp前缀，后缀
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+   #设置上传文件大小
+  servlet:
+    multipart:
+      #单个文件最大
+      max-file-size: 20MB
+      #一次请求的最大文件数量
+      max-request-size: 100MB
+#端口号，项目名
+server:
+  port: 8989
+  servlet:
+    context-path: /cmfz
+    #页面热部署
+    jsp:
+      init-parameters:
+        development: true
